@@ -22,14 +22,11 @@ Borra el ejemplo de abajo cuando escribas el primero.
 
 ## Prompt 1
 
-**Modelo:** Opus 1M xHigh
-**Herramienta:** Claude Code
+**Modelo:** Auto
+**Herramienta:** Cursor
 
 ```
-Este es el ejemplo. Bórralo.
-
-El prompt va aquí dentro, entero y con sus saltos de línea,
-para que se sepa dónde empieza y dónde acaba.
+Audita únicamente la feature de comentarios de este proyecto (crear, editar, borrar y listar comentarios en API, DB y web). Para cada hallazgo, exige obligatoriamente que incluya el archivo y la línea exacta que lo demuestra. Si no hay línea de código que lo cite, no escribas el hallazgo.
 ```
 
-**Qué salió:** (opcional, una línea) funcionó a la primera / tuve que insistir / me inventó una ruta que no existe.
+**Qué salió:** 
