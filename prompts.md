@@ -16,20 +16,26 @@ distinto, y sin este archivo no se distinguen.
 - Incluye también los que **no funcionaron**. Suelen ser los más útiles de leer.
 - `Modelo` y `Herramienta` en todos. Si cambiaste de una a otra a mitad, se nota aquí.
 
-Borra el ejemplo de abajo cuando escribas el primero.
-
 ---
 
 ## Prompt 1
 
-**Modelo:** Opus 1M xHigh
+**Modelo:** Opus 5.5
 **Herramienta:** Claude Code
 
 ```
-Este es el ejemplo. Bórralo.
-
-El prompt va aquí dentro, entero y con sus saltos de línea,
-para que se sepa dónde empieza y dónde acaba.
+Produce una auditoría priorizada de la feature de comentarios y déjala escrita en docs/auditoria/comentarios.md. Una feature es una funcionalid del blog de punta a punta: sus rutas en la API, su tabla en la base de datos y lo que la web enseña de ella. Este blog tiene 5 features (posts, comentarios, autores, categorías y etiquetas). Pon el foco en la feature de comentarios e ignora el resto. El formato de la auditoria no es negociable, revisa el fichero README.md donde se describe dicho formato
 ```
 
-**Qué salió:** (opcional, una línea) funcionó a la primera / tuve que insistir / me inventó una ruta que no existe.
+**Qué salió:** a la primera; 18 hallazgos con las seis casillas, dos comprobados contra la API en marcha, y la Parte B queda con huecos para rellenar a mano.
+
+## Prompt 2
+
+**Modelo:** Opus 5.5
+**Herramienta:** Claude Code
+
+```
+¿qué significa el tickbox de columna # de lar parte A Hallazgos del fichero comentarios.md?
+```
+
+**Qué salió:** explicó que la ✔ marca los hallazgos comprobados contra la API en marcha (C1 y C4).
