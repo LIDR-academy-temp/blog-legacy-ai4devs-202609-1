@@ -26,10 +26,35 @@ Borra el ejemplo de abajo cuando escribas el primero.
 **Herramienta:** Claude Code
 
 ```
-Este es el ejemplo. Bórralo.
+necesito produzcas una auditoria priorizada del feature de comentarios, dentro de la aplicacion.
+Solo esa feature de comentarios. No el sistema entero.
+Creame la auditoria en docs/auditoria/comentarios.md con una fila por hallazgo, con estas seis columnas:
 
-El prompt va aquí dentro, entero y con sus saltos de línea,
-para que se sepa dónde empieza y dónde acaba.
+- Qué es. Una frase. Si necesitas tres, es que hay dos hallazgos.
+- Evidencia de Dónde está, con la línea que lo demuestra. Sin esta casilla, la fila no se escribe.
+- Qué se rompe, y quién lo nota. El efecto concreto y a quién le llegaria.
+- Cuántos sitios hay que tocar. Contados, no estimados.
+- ¿Se deshace con un revert? Sí o no, y si es que no, por qué no.
+- ¿Bloquea o desbloquea a otro hallazgo? Nombrando al otro. "A ninguno" es la respuesta valida.
+
+No supongas nada, si no tenes algun dato para completar, deja la columna en blanco.
 ```
 
-**Qué salió:** (opcional, una línea) funcionó a la primera / tuve que insistir / me inventó una ruta que no existe.
+**Qué salió:** (opcional, una línea)  tuve que insistir agregando el orden
+
+--
+
+## Prompt 2
+
+**Modelo:** Opus 1M xHigh
+**Herramienta:** Claude Code
+
+```
+NEcesito que modifiques el orden de la matriz generada.
+primero la precedencia (lo que abarata o desbloquea a otro hallazgo va antes), y dentro de cada nivel, el daño dividido por el radio(cuantos sitios hay que tocar). 
+Si un hallazgo tiene el daño más alto y la precedencia más baja a la vez, se parte en dos filas, una contención que corta el daño hoy y el arreglo de fondo que espera su turno. 
+las propuestas que nadie ha medido todavía van fuera de la tabla, con lo que habría que medir escrito al lado.
+```
+
+**Qué salió:** (opcional, una línea)  tuve que insistir agregando el orden
+
