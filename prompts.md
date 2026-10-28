@@ -16,20 +16,54 @@ distinto, y sin este archivo no se distinguen.
 - Incluye también los que **no funcionaron**. Suelen ser los más útiles de leer.
 - `Modelo` y `Herramienta` en todos. Si cambiaste de una a otra a mitad, se nota aquí.
 
-Borra el ejemplo de abajo cuando escribas el primero.
-
 ---
 
 ## Prompt 1
 
-**Modelo:** Opus 1M xHigh
-**Herramienta:** Claude Code
+**Proyecto:** blog-legacy-ai4devs-202609-1 (rama `s6/start`)
+**Modelo:** Opus 5.5 Medium
+**Herramienta:** Claude Code 2.1.296
 
 ```
-Este es el ejemplo. Bórralo.
-
-El prompt va aquí dentro, entero y con sus saltos de línea,
-para que se sepa dónde empieza y dónde acaba.
+Haz un resumen de los últimos commits
 ```
 
-**Qué salió:** (opcional, una línea) funcionó a la primera / tuve que insistir / me inventó una ruta que no existe.
+**Qué salió:** funcionó a la primera. Resumió los 3 commits de `s6/start`. El primer intento falló con «Login expired» y lo relancé después de `/login`.
+
+---
+
+## Prompt 2
+
+**Proyecto:** blog-legacy-ai4devs-202609-1 (rama `s6/start`)
+**Modelo:** Opus 5.5 Medium
+**Herramienta:** Claude Code 2.1.296
+
+```
+lista los archivos donde aparezca la palabra 'BarraLateral'
+```
+
+**Qué salió:** funcionó a la primera. Encontró 2 archivos, `frontend/src/App.jsx` y `frontend/src/componentes/BarraLateral.jsx`, con las líneas exactas.
+
+---
+
+## Prompt 3
+
+**Proyecto:** blog-legacy-ai4devs-202609-1 (rama `auditoria-maj`)
+**Modelo:** Opus 5.5 Medium
+**Herramienta:** Claude Code 2.1.296
+
+```
+Produce la auditoría de la feature de comentarios y déjala escrita en docs/auditoria/comentarios.md.
+la feature comentarios es una funcionalidad del blog de punta a punta, sus capas son: rutas en la API, tabla en la base de datos y lo que la web enseña de ella. 
+Sus funcionalidades a auditar son: crear, editar, borrar y listar comentarios, en esas tres capas.
+No auditar ninguna feature mas.
+El formato no es negociable: una fila por hallazgo, con estas seis casillas.
+Qué es. En Una frase.
+Dónde está, con la línea que lo demuestra. Sin esta casilla, la fila no se escribe.
+Qué se rompe, y quién lo nota. El efecto concreto y a quién le llega. "Nadie todavía" es una respuesta válida y buena.
+Cuántos sitios hay que tocar. Contados, no estimados.
+¿Se deshace con un revert? Sí o no, y si es que no, por qué no.
+¿Bloquea o desbloquea a otro hallazgo? Nombrando al otro. "A ninguno" es la respuesta más frecuente.
+```
+
+**Qué salió:** funcionó a la primera. Escribió 17 hallazgos (C1–C17) con las seis casillas, cada uno con su línea citada y ordenados por prioridad. La Parte B se quedó vacía para rellenarla a mano.
