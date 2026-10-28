@@ -22,14 +22,33 @@ Borra el ejemplo de abajo cuando escribas el primero.
 
 ## Prompt 1
 
-**Modelo:** Opus 1M xHigh
+**Modelo:** Opus 5.5
 **Herramienta:** Claude Code
 
 ```
-Este es el ejemplo. Bórralo.
-
-El prompt va aquí dentro, entero y con sus saltos de línea,
-para que se sepa dónde empieza y dónde acaba.
+Resume los últimos commits de este repositorio con su hash corto y mensaje. No modifiques archivos.
 ```
 
-**Qué salió:** (opcional, una línea) funcionó a la primera / tuve que insistir / me inventó una ruta que no existe.
+**Qué salió:** Resumió los tres commits de la rama `s6/start`; confirmó que no modificó archivos.
+
+## Prompt 2
+
+**Modelo:** Opus 5.5
+**Herramienta:** Claude Code
+
+```
+Busca en qué archivos del proyecto aparece la palabra comentarios y enumera las rutas. No modifiques archivos.
+```
+
+**Qué salió:** Enumeró 12 archivos; confirmó que no modificó archivos.
+
+## Prompt 3
+
+**Modelo:** Opus 5.5
+**Herramienta:** Claude Code
+
+```
+Audita exclusivamente la feature de comentarios (crear, editar, borrar y listar) en la API, la base de datos y el frontend. Devuelve hallazgos candidatos distintos, agrupando las repeticiones del mismo problema. Para cada uno cita archivo y líneas exactas, describe el efecto observable y cuenta los sitios a tocar. Indica si el cambio se deshace con un revert y qué hallazgo desbloquea solo cuando el código lo demuestre. Propón un orden por precedencia y luego por daño dividido entre radio. Separa las hipótesis sin verificar e indica qué habría que medir. No modifiques archivos.
+```
+
+**Qué salió:** 14 hallazgos.
