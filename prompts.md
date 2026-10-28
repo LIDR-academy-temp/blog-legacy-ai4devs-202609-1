@@ -16,20 +16,25 @@ distinto, y sin este archivo no se distinguen.
 - Incluye también los que **no funcionaron**. Suelen ser los más útiles de leer.
 - `Modelo` y `Herramienta` en todos. Si cambiaste de una a otra a mitad, se nota aquí.
 
-Borra el ejemplo de abajo cuando escribas el primero.
-
 ---
 
 ## Prompt 1
 
-**Modelo:** Opus 1M xHigh
-**Herramienta:** Claude Code
+**Modelo:** Claude 3.5 Sonnet
+**Herramienta:** GitHub Copilot (Eclipse - Chat)
 
 ```
-Este es el ejemplo. Bórralo.
+Audita exclusivamente la feature de comentarios (crear, editar, borrar y listar comentarios en API, Base de Datos y Frontend/Web). NO audites el resto de features (posts, autores, categorías, etiquetas) ni modifiques código del proyecto.
 
-El prompt va aquí dentro, entero y con sus saltos de línea,
-para que se sepa dónde empieza y dónde acaba.
+Analiza el código y lista los hallazgos con las siguientes 6 columnas por fila:
+1. Qué es (una sola frase).
+2. Dónde está (archivo y línea exacta que lo demuestra).
+3. Qué se rompe, y quién lo nota.
+4. Cuántos sitios hay que tocar (conteo exacto, no estimado).
+5. ¿Se deshace con un revert? (Sí/No y por qué).
+6. ¿Bloquea o desbloquea a otro hallazgo? (nombrando el otro o "A ninguno").
+
+No modifiques ningún archivo. Muestra únicamente la lista de hallazgos en el chat.
 ```
 
-**Qué salió:** (opcional, una línea) funcionó a la primera / tuve que insistir / me inventó una ruta que no existe.
+**Qué salió:** El agente entregó la matriz con 15 hallazgos detallados y acotados únicamente a la feature de comentarios, identificando discrepancias de datos en la semilla, filtros duplicados, problemas de seguridad y falta de tests.
