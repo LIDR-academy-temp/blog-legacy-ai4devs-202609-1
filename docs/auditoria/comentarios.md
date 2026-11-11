@@ -137,3 +137,21 @@ Estas partes quedaron sin respuesta dentro de casillas que sí están rellenas:
 - **#6, #8 y #15:** qué hay en los datos reales.
 - **#11:** si hay clientes de la API fuera de este repo.
 - **#10:** si las diferencias son intencionadas.
+
+---
+
+
+# Parte B: las 3 lineas
+
+1. Hallazgos auditados:
+   - Hallazgos devueltos por el agente:	25
+   - Hallazgos comprobados: 					8
+
+2. El hallazgo del que no supiste decidir la prioridad, y en una frase, por qué. 
+	
+    Rta: Sinceramente ya dude entre los 2 primeros en prioridad (#16 y #1-C). Esto debido a que si bien el #16 habilitaba a todos, este es intrinsecamente menos crítico que el #1-C. Igualmente me quedé con el orden por la precedencia y por la consideración que es necesario los test para poder avanzar con el resto de los hallazgos.
+
+3. Algo que el agente afirmó y no pudiste verificar. 
+	
+    Rta: No pude verificar las afirmaciones de que solucionar un hallazgo junto con otro abarata a ambos, por ejemplo en el #15 que dice de realizarlo junto con el 8 para abaratar ambos.
+	
