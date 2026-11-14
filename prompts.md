@@ -22,14 +22,40 @@ Borra el ejemplo de abajo cuando escribas el primero.
 
 ## Prompt 1
 
-**Modelo:** Opus 1M xHigh
+**Modelo:** Opus 5.5
 **Herramienta:** Claude Code
 
 ```
-Este es el ejemplo. Bórralo.
-
-El prompt va aquí dentro, entero y con sus saltos de línea,
-para que se sepa dónde empieza y dónde acaba.
+Audita la rebanada de COMENTARIOS (crear, editar, borrar y listar comentarios) de este proyecto: todo lo que toque la feature de comentarios en la capa de rutas en la API, su(s) tabla(s) en la base de datos y lo que se ve en la WEB (frontend) de ella. Devuelve los hallazgos de la rebanada de COMENTARIOS y, para cada uno proporciona una fila con las siguientes casillas: 
+- ¿QUE ES?: En una frase, si requieres más de 2 son dos hallazgos.
+- UBICACION: Donde esta y con la línea que lo demuestra. Sin esta casilla la fila no se escribe.
+- DAÑO: qué se rompe y quién lo nota.  El efecto concreto y a quién le llega. "Nadie todavía" es una respuesta válida y buena. 
+- RADIO: cuántos sitios hay que tocar para corregir el hallazgo. Contados y nombrados, no estimados.
+- ¿ES REVERSIBLE?: SI/NO. Sino por que no
+- PRECEDENCIA: ¿su arreglo afecta a otro hallazgo?. Nombra al hallazgo que afecta. "A ninguno" es una respuesta valida.
+Esto es una AUDITORIA, no arregles nada.
 ```
 
-**Qué salió:** (opcional, una línea) funcionó a la primera / tuve que insistir / me inventó una ruta que no existe.
+**Qué salió:** 28 hallazgos con las seis casillas; el agente los escribió en `docs/auditoria/comentarios.md` (lo pide el README) además de resumirlos en el chat.
+
+## Prompt 2
+
+**Modelo:** Opus 5.5
+**Herramienta:** Claude Code
+
+```
+Ordena la lista de hallazgo que acabas de encontrar de la feature de comentarios priorizada primero por PRECEDENCIA (esto es que van primero los hallazgos que su corrección tienen afectación en otros hallazgos de la lista) y luego por DAÑO dividido por RADIO. Guarda la lista ordenada y priorizada en `docs/auditoria/comentarios.md`
+```
+
+**Qué salió:** reordenó por nivel de precedencia y después por daño ÷ radio, puntuando el daño de 1 a 4; reescribió la casilla Precedencia como «Afecta a / Depende de / Junto a» y añadió la tabla del cálculo.
+
+## Prompt 3
+
+**Modelo:** Opus 5.5
+**Herramienta:** Claude Code
+
+```
+ Guarda en `prompts.md` los prompts de esta sesión de acuerdo a los lineamientos descritos ahí.
+```
+
+**Qué salió:** este archivo.
